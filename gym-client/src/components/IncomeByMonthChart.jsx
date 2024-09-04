@@ -63,6 +63,7 @@ const IncomeByMonthChart = ({ data }) => {
       title: {
         display: true,
         text: "Income Data",
+        align: "start",
       },
     },
     scales: {

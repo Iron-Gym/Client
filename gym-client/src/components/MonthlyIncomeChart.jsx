@@ -36,6 +36,7 @@ const MonthlyIncomeChart = ({ data }) => {
       title: {
         display: true,
         text: "Income Distribution",
+        align: "start",
       },
     },
   };

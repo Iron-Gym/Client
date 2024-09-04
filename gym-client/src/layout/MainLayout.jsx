@@ -2,24 +2,34 @@ import React, { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
   UserOutlined,
-  VideoCameraOutlined,
+  ScheduleOutlined,
+  RobotOutlined,
+  DollarOutlined,
+  CheckOutlined,
+  HomeOutlined,
 } from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
+import { Button, Layout, Menu } from "antd";
 import Register from "../components/Register";
 import Login from "../components/Login";
 import Home from "../components/Home";
 import logo from "../images/logo.png";
+
 const { Header, Sider, Content } = Layout;
+
 const MainLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+
   return (
-    <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Layout className="max-w-[1440px] w-full mx-auto">
+      <Sider
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        style={{
+          background: "#1E201E", // Change sidebar color to red
+        }}
+      >
         {collapsed ? (
           <div className="my-5">
             <img src={logo} alt="" />
@@ -36,20 +46,36 @@ const MainLayout = () => {
           items={[
             {
               key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
+              icon: <HomeOutlined />,
+              label: "Home",
             },
             {
               key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
+              icon: <UserOutlined />,
+              label: "Clients",
             },
             {
               key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
+              icon: <RobotOutlined />,
+              label: "Admins",
+            },
+            {
+              key: "4",
+              icon: <DollarOutlined />,
+              label: "Income",
+            },
+            {
+              key: "5",
+              icon: <CheckOutlined />,
+              label: "Payments",
+            },
+            {
+              key: "6",
+              icon: <ScheduleOutlined />,
+              label: "Schedules",
             },
           ]}
+          style={{ background: "#1E201E" }} // Change sidebar menu color to red
         />
       </Sider>
       <Layout
@@ -60,7 +86,7 @@ const MainLayout = () => {
         <Header
           style={{
             padding: 0,
-            background: "#001529",
+            background: "#1E201E", // Change header color to red
             height: "40px",
           }}
         >
@@ -79,17 +105,15 @@ const MainLayout = () => {
         <Content
           style={{
             margin: "0px",
-            padding: 12,
             minHeight: 280,
             background: "#001529",
           }}
         >
-          {/* <Register /> */}
-          {/* <Login/> */}
           <Home />
         </Content>
       </Layout>
     </Layout>
   );
 };
+
 export default MainLayout;

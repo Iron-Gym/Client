@@ -3,6 +3,7 @@ import CountCard from "./CountCard";
 import Calendar from "./Calendar";
 import IncomeByMonthChart from "./IncomeByMonthChart";
 import MonthlyIncomeChart from "./MonthlyIncomeChart";
+import UnpaidClients from "./UnpaidClients";
 
 // Example income data
 const incomeData = [
@@ -36,28 +37,34 @@ const monthlyIncome = {
 };
 const Home = () => {
   return (
-    <div className="home bg-[rgb(250,249,246)] h-full w-full">
+    <div className="home bg-[#0C0C0C] h-full w-full">
       <div className="w-full h-full flex">
-        <div className="bg-blue-400 h-full w-9/12">
-          <div className="bg-red-600 h-1/4">
-            <CountCard name="kavinda" />
-          </div>
-          <div className="bg-blue-900 h-2/4 w-full flex">
-            <div className="h-full w-1/2">
-              <IncomeByMonthChart data={incomeData} />
-              {/* Pass incomeData as a prop */}
-            </div>
-            <div className="h-full w-1/2">
-              <MonthlyIncomeChart data={monthlyIncome} />
+        <div className="h-full w-9/12">
+          <div className="h-1/6 p-3 pb-0">
+            <div className="h-full bg-[#1E201E] rounded-lg">
+              <CountCard name="kavinda" />
             </div>
           </div>
-          <div className="bg-blue-100 h-1/4">ss</div>
+          <div className="h-3/6 w-full p-3">
+            <div className="flex h-full w-full ">
+              <div className="h-full w-3/5 flex justify-center bg-[#1E201E] items-start rounded-lg mr-3 pb-3 px-5">
+                <IncomeByMonthChart data={incomeData} />
+              </div>
+              <div className="h-full w-2/5 flex justify-center bg-[#1E201E] items-start rounded-lg pb-3 px-5">
+                <MonthlyIncomeChart data={monthlyIncome} />
+              </div>
+            </div>
+            <h2 className="text-center">View all</h2>
+          </div>
+          <div className="h-2/6 p-3 pt-0 overflow-hidden">
+            <UnpaidClients />
+          </div>
         </div>
-        <div className="bg-red-400 h-full w-3/12">
-          <div className="bg-blue-100 h-2/4">
+        <div className=" h-full w-3/12 p-3 pl-0">
+          <div className="bg-[#1E201E] h-auto rounded-lg">
             <Calendar />
           </div>
-          <div className="bg-red-800 h-2/4">aad</div>
+          <div className="bg-red-800 h-auto">aad</div>
         </div>
       </div>
     </div>

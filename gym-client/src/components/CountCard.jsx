@@ -1,50 +1,34 @@
 import React from "react";
-import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
-import { Card, Col, Row, Statistic } from "antd";
-const CountCard = (props) => (
-  <Row gutter={16} className="flex justify-evenly items-center h-full">
-    <Col span={6}>
-      <Card bordered={false}>
-        <Statistic
-          title={props.name}
-          value={11.28}
-          precision={2}
-          valueStyle={{
-            color: "#3f8600",
-          }}
-          prefix={<ArrowUpOutlined />}
-          suffix="%"
-        />
-      </Card>
-    </Col>
-    <Col span={6}>
-      <Card bordered={false}>
-        <Statistic
-          title={props.name}
-          value={11.28}
-          precision={2}
-          valueStyle={{
-            color: "#3f8600",
-          }}
-          prefix={<ArrowUpOutlined />}
-          suffix="%"
-        />
-      </Card>
-    </Col>
-    <Col span={6}>
-      <Card bordered={false}>
-        <Statistic
-          title="Idle"
-          value={9.3}
-          precision={2}
-          valueStyle={{
-            color: "#cf1322",
-          }}
-          prefix={<ArrowDownOutlined />}
-          suffix="%"
-        />
-      </Card>
-    </Col>
-  </Row>
-);
+
+const CountCard = () => {
+  return (
+    <div className="flex justify-evenly items-center h-full p-3">
+      <div className="bg-black text-white h-full w-full rounded-lg p-3 m-2">
+        <h1>Header</h1>
+        <div>
+          <h2>
+            Amount: <span className="text-red-400">200</span>
+          </h2>
+        </div>
+      </div>
+      <div className="bg-black text-white h-full w-full rounded-lg p-3 m-2">
+        <h1>Header</h1>
+        <div>
+          <h2>
+            Amount: <span className="text-red-400">200</span>
+          </h2>
+        </div>
+      </div>
+      <div className="bg-black text-white h-full w-full rounded-lg p-3 m-2">
+        <h1>Header</h1>
+        <div>
+          <h2>
+            Amount: <span className="text-red-400">200</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default CountCard;

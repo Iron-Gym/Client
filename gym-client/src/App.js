@@ -4,7 +4,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-[#080808]">
       <MainLayout />
     </div>
   );
